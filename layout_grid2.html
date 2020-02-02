@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>layout-grid2</title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        background-color: #c8c8c8;
+      }
+
+      .grid-1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: 20px repeat(5, 1fr) 20px;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>CSS Grid 속성</h1>
+      <p>3개의 세로 열 트랙으로 구성. 하나의 열마다 최소 높이가 100px 넓이는 자동으로 늘어나는 구조</p>
+      <p>fr단위는 그리드 컨테이너에 남아 있는 사용 가능한 공간의 일정 비율을 나타냅니다.</p>
+      <a href="https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout">MDN web doc 참조</a>
+      <pre>
+        <code>
+          .grid-1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+          }
+        </code>
+      </pre>
+    </article>
+    <ul class="grid-1">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <pre><code>
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </code></pre>
+    <ul class="grid-2">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <pre><code>
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </code></pre>
+    <ul class="grid-3">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <pre><code>
+      .grid-4 {
+        display: grid;
+        grid-template-columns: 20px repeat(6, 1fr) 20px;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+      }
+    </code></pre>
+    <ul class="grid-4">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

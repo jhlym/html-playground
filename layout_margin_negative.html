@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 960px;
+        margin: 0 auto;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+        position: relative;
+        margin-right: -16px !important;
+      }
+      li {
+        position: relative;
+        padding-right: 16px;
+        padding-bottom: 30px;
+        float: left;
+      }
+      li > div {
+        background-color: #c8c8c8;
+        width: 226px;
+        height: 196px;
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul class="clearfix">
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+      </ul>
+    </main>
+  </body>
+</html>
