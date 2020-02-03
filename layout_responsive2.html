@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    /* default */
+    html,
+    body {
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 10px 15px;
+      border-bottom: 1px solid #363636;
+    }
+
+    /* layout */
+    .wrapper {
+      margin: 0 !important;
+    }
+
+    div#statics {
+      padding: 0;
+    }
+
+
+    /* box */
+    div.box {
+      width: 100%;
+      background-color: #212121;
+      color: #bdbdbd;
+      border: 1px solid #363636;
+      margin-top: 15px;
+    }
+
+    div.recovery {
+      color: #70A800 !important;
+    }
+
+    /* text */
+    div.box .subtitle h1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      display: inline-block;
+    }
+
+    .text-center {
+      width: 100%;
+      text-align: center;
+    }
+
+    .number {
+      color: white;
+    }
+
+    span {
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="col-md-12">
+    <div class="box">
+      <h3 class="title">2019-nCoV Global Case by Jonhns Hopkins CSSE</h3>
+      <span>(each point is updated as new cases are identified)</span>
+    </div>
+  </header>
+  <!-- main -->
+  <main class="row wrapper">
+    <!-- confirm case -->
+    <div id="left" class="col-md-2">
+      <div class="box">
+        <h8 class="title text-center">Total confirmed</h8>
+        <h1 class="title text-center number">16,847</h1>
+      </div>
+      <div class="box">
+        <h8 class="title text-center">Confirmed Case by Country/Region</h8>
+        <ul>
+          <li><span class="number">16,634</span> Mainland China</li>
+          <li><span class="number">20</span> Japan</li>
+          <li><span class="number">19</span> Thiland</li>
+          <li><span class="number">18</span> Singapore</li>
+          <li><span class="number">15</span> Hongkong</li>
+          <li><span class="number">15</span> South Korea</li>
+          <li><span class="number">15</span> Australia</li>
+          <li><span class="number">12</span> Germany</li>
+          <li><span class="number">10</span> Taiwan</li>
+          <li><span class="number">10</span> Macacu</li>
+          <li><span class="number">10</span> US</li>
+        </ul>
+      </div>
+    </div>
+    <!-- statics -->
+    <div id="statics" class="col-md-6">
+      <!-- map -->
+      <div class="box">
+        <div id="googleMap" style="width:100%;height:350px;"></div>
+      </div>
+      <!-- chart -->
+      <div class="box">
+        <div id="chartContainer" style="height: 250px; width: 100%;"></div>
+      </div>
+    </div>
+    <!-- status -->
+    <div id="right" class="col-md-4">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- death -->
+          <div class="box">
+            <h8 class="title text-center">Total Death</h8>
+            <h1 class="title text-center number">362</h1>
+            <ul>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+              <li><span class="number">11,177</span> confirmed; <span class="number">350</span> deaths <span
+                  class="number">Hubei</span> Mainland China</li>
+            </ul>
+          </div>
+        </div>
+        <!-- recovery -->
+        <div class="col-md-6">
+          <div class="box recovery">
+            <h8 class="title text-center">Total Recovery</h8>
+            <h1 class="title text-center">472</h1>
+            <ul>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+              <li><span>295</span> recovered;<span>Hubei</span> Mainland China</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="row">
+        <footer class="col-md-12">
+          <div class="box">
+            <h1>#footer</h1>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <!-- scripts -->
+
+  <!-- google map -->
+  <script>
+    function myMap() {
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+        styles: [
+          { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+          { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+          { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+          {
+            featureType: 'administrative.locality',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#d59563' }]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#d59563' }]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry',
+            stylers: [{ color: '#263c3f' }]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#6b9a76' }]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{ color: '#38414e' }]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry.stroke',
+            stylers: [{ color: '#212a37' }]
+          },
+          {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#9ca5b3' }]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{ color: '#746855' }]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{ color: '#1f2835' }]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#f3d19c' }]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'geometry',
+            stylers: [{ color: '#2f3948' }]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#d59563' }]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{ color: '#17263c' }]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{ color: '#515c6d' }]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.stroke',
+            stylers: [{ color: '#17263c' }]
+          }
+        ]
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6qxaifkyjorzGUGjVyCLX8nSKW5bJ_qc&callback=myMap"></script>
+
+  <!-- chart -->
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
+    window.onload = function () {
+
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        zoomEnabled: true,
+        theme: "dark2",
+        title: {
+          text: "Business Growth From 2000 to 2017"
+        },
+        axisX: {
+          title: "Year",
+          valueFormatString: "####",
+          interval: 2
+        },
+        axisY: {
+          logarithmic: true, //change it to false
+          title: "Profit in USD (Log)",
+          prefix: "$",
+          titleFontColor: "#6D78AD",
+          lineColor: "#6D78AD",
+          gridThickness: 0,
+          lineThickness: 1,
+          //includeZero: false,
+          labelFormatter: addSymbols
+        },
+        axisY2: {
+          title: "Profit in USD",
+          prefix: "$",
+          titleFontColor: "#51CDA0",
+          logarithmic: false, //change it to true
+          lineColor: "#51CDA0",
+          gridThickness: 0,
+          lineThickness: 1,
+          labelFormatter: addSymbols
+        },
+        legend: {
+          verticalAlign: "top",
+          fontSize: 16,
+          dockInsidePlotArea: true
+        },
+        data: [{
+          type: "line",
+          xValueFormatString: "####",
+          yValueFormatString: "$#,##0.##",
+          showInLegend: true,
+          name: "Log Scale",
+          dataPoints: [
+            { x: 2001, y: 8000 },
+            { x: 2002, y: 20000 },
+            { x: 2003, y: 40000 },
+            { x: 2004, y: 60000 },
+            { x: 2005, y: 90000 },
+            { x: 2006, y: 140000 },
+            { x: 2007, y: 200000 },
+            { x: 2008, y: 400000 },
+            { x: 2009, y: 600000 },
+            { x: 2010, y: 800000 },
+            { x: 2011, y: 900000 },
+            { x: 2012, y: 1400000 },
+            { x: 2013, y: 2000000 },
+            { x: 2014, y: 4000000 },
+            { x: 2015, y: 6000000 },
+            { x: 2016, y: 8000000 },
+            { x: 2017, y: 9000000 }
+          ]
+        },
+        {
+          type: "line",
+          xValueFormatString: "####",
+          yValueFormatString: "$#,##0.##",
+          axisYType: "secondary",
+          showInLegend: true,
+          name: "Linear Scale",
+          dataPoints: [
+            { x: 2001, y: 8000 },
+            { x: 2002, y: 20000 },
+            { x: 2003, y: 40000 },
+            { x: 2004, y: 60000 },
+            { x: 2005, y: 90000 },
+            { x: 2006, y: 140000 },
+            { x: 2007, y: 200000 },
+            { x: 2008, y: 400000 },
+            { x: 2009, y: 600000 },
+            { x: 2010, y: 800000 },
+            { x: 2011, y: 900000 },
+            { x: 2012, y: 1400000 },
+            { x: 2013, y: 2000000 },
+            { x: 2014, y: 4000000 },
+            { x: 2015, y: 6000000 },
+            { x: 2016, y: 8000000 },
+            { x: 2017, y: 9000000 }
+          ]
+        }]
+      });
+      chart.render();
+
+      function addSymbols(e) {
+        var suffixes = ["", "K", "M", "B"];
+
+        var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
+        if (order > suffixes.length - 1)
+          order = suffixes.length - 1;
+
+        var suffix = suffixes[order];
+        return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
